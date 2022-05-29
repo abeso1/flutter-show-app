@@ -9,26 +9,23 @@ class ReusableWidgets {
 
   ///shared app bar with sj logo and custom actionButton on right side
   static PreferredSizeWidget appBarWithCustomAction(
-      bool hasSjLogo, BuildContext context, List<Widget> customActions) {
+      bool hasLogo, BuildContext context, List<Widget> customActions) {
     return PreferredSize(
       preferredSize: Size.fromHeight(70),
       child: AppBar(
           //ignore: deprecated_member_use
           //brightness: Brightness.light,
           backgroundColor: Colors.white,
-          leadingWidth: 350,
+          leadingWidth: 150,
           elevation: 0,
-          leading: hasSjLogo
+          leading: hasLogo
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
                       //in layout there is 20 pixel margin to left
-                      padding: EdgeInsets.only(
-                        top: 10,
-                        left: 20,
-                      ),
-                      //logo of meelz
+                      padding: EdgeInsets.only(top: 10, left: 20, right: 10),
+                      //logo
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Image.asset(
@@ -39,17 +36,22 @@ class ReusableWidgets {
                         ),
                       ),
                     ),
-                    Text(
-                      "Rezervacija",
-                      style: AppTextStyles.newStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
                   ],
                 )
               : null,
+          title: Padding(
+            padding: const EdgeInsets.only(
+              top: 20,
+            ),
+            child: Text(
+              "Rezervacija",
+              style: AppTextStyles.newStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           //Custom action widget from parameter
           actions: customActions
               .map((action) => Row(
