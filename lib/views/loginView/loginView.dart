@@ -8,6 +8,7 @@ import 'package:flutter_show_app/shared/reusableTextFormField.dart';
 import 'package:flutter_show_app/shared/reusableWidgets.dart';
 import 'package:flutter_show_app/shared/textFieldValidators.dart';
 import 'package:flutter_show_app/store/userStore.dart';
+import 'package:flutter_show_app/views/mainView/mainView.dart';
 
 class LoginInView extends StatefulWidget {
   @override
@@ -39,6 +40,8 @@ class _LoginInViewState extends State<LoginInView> {
           TextButton(
             onPressed: () {
               userStore.setUserType(UserType.guest);
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MainView()));
             },
             child: Text(
               "Preskoči",

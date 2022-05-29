@@ -4,8 +4,8 @@ import 'package:flutter_show_app/views/splashView/splashView.dart';
 
 final rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: AppColors.mainGreenColor,
