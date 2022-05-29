@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_show_app/services/splashServices.dart';
 import 'package:flutter_show_app/shared/sizeConfig.dart';
 
 class SplashView extends StatefulWidget {
@@ -9,6 +10,12 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+    SplashServices.splashInitialization(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

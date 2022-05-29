@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_show_app/shared/appColors.dart';
-import 'package:flutter_show_app/views/views/splashView/splashView.dart';
+import 'package:flutter_show_app/views/splashView/splashView.dart';
+
+final rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   runApp(const MyApp());
